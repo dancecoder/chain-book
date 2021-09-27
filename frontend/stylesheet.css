@@ -1,0 +1,27 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    max-width: 1366px;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.text {
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
