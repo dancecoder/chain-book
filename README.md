@@ -1,1 +1,3 @@
 # chain-book
+
+readme update
