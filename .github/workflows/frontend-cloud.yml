@@ -17,8 +17,8 @@ jobs:
       with:
         node-version: 16.x
         cache: 'npm'
+        working-directory: ./frontend
     - name: build react app
-      working-directory: ./frontend
       run: |
         pwd
         npm ci
