@@ -20,6 +20,7 @@ jobs:
     - name: build react app
       working-directory: ./frontend
       run: |
+        pwd
         npm ci
         npm run build
     - name: Yandex object storage static website
