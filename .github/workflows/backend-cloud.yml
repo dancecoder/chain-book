@@ -1,0 +1,28 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Yandex Serverless Action
+      uses: Goodsmileduck/yandex-serverless-action@v1
+      with:
+        token: ${{secrets.YC_TOKEN}}
+        function_id: d4ek7tso60566ga8gr2l
+        runtime: node16
+        entrypoint: function.handler
+        source: ./backend
+        exclude: .*
+        environment: YDB_DBNAME=${{secrets.YDB_DBNAME}}, YDB_ENDPOINT=${{secrets.YDB_ENDPOINT}}
+        service_account: ${{secrets.YC_SERVICE_ACCOUNT}}
