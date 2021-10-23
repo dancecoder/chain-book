@@ -24,5 +24,5 @@ jobs:
         entrypoint: function.handler
         source: ./backend
         exclude: .*
-        environment: YDB_DBNAME=${{secrets.YDB_DBNAME}}, YDB_ENDPOINT=${{secrets.YDB_ENDPOINT}}
+        environment: YDB_DBNAME=${{secrets.YDB_DBNAME}},YDB_ENDPOINT=${{secrets.YDB_ENDPOINT}}
         service_account: ${{secrets.YC_SERVICE_ACCOUNT}}
