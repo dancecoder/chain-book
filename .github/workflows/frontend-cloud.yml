@@ -22,8 +22,8 @@ jobs:
     - name: build react app
       run: |
         pwd
-        npm ci
-        npm run build
+        npm ci --workspace frontend
+        npm run build --workspace frontend
     - name: Yandex object storage static website
       uses: NekitCorp/yandex-storage-website-action@v1
       with:        
