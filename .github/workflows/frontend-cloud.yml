@@ -9,27 +9,33 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
     defaults:
       run:
         working-directory: ./frontend
+    
     steps:
+    
     - uses: actions/checkout@v2
+    
     - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
         cache: 'npm'
+    
     - name: build react app
       run: |
         pwd
         npm ci
         npm run build
-    - name: Yandex object storage static website
-      uses: NekitCorp/yandex-storage-website-action@v1
-      with:        
-        accessKeyId: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY_ID}}
-        secretAccessKey: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY}}
-        bucket: www.nextcloud.ru
-        path: ./frontend/build        
-        clear: true
-
+        
+    - uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --delete --endpoint-url=https://storage.yandexcloud.net
+      env:
+        AWS_S3_BUCKET: www.nexusbook.ru
+        AWS_ACCESS_KEY_ID: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY}}
+        AWS_REGION: ru-central1
+        SOURCE_DIR: ./frontend/build
