@@ -32,8 +32,9 @@ jobs:
         
     - uses: jakejarvis/s3-sync-action@master
       with:
-        args: --delete --endpoint-url=https://storage.yandexcloud.net
+        args: --delete
       env:
+        AWS_S3_ENDPOINT: https://storage.yandexcloud.net
         AWS_S3_BUCKET: www.nexusbook.ru
         AWS_ACCESS_KEY_ID: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY_ID}}
         AWS_SECRET_ACCESS_KEY: ${{secrets.YC_SERVICE_ACCOUNT_ACCESS_KEY}}
