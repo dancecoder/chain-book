@@ -20,7 +20,7 @@ jobs:
       with:
         token: ${{secrets.YC_TOKEN}}
         function_id: d4ek7tso60566ga8gr2l
-        runtime: node16
+        runtime: nodejs16
         entrypoint: function.handler
         source: ./backend
         exclude: .*
