@@ -1,0 +1,87 @@
+.AppWork {
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  width: 1366px;
+  height: 768px;
+  background-color:rgb(152, 142, 214);
+}
+
+.AppFrame {
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  display: block;
+  width: 850px;
+  height: auto;
+  margin: 8rem auto;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
+.HomeText {
+  margin: 4rem auto 6rem;
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+.home__Icon {
+  position:absolute;
+  top: 9rem;
+  left: 18rem;
+  font-weight: 900;
+  color:black;
+  text-decoration: none;
+}
+
+.button__signup {
+  margin: 0 4rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color:tomato;
+  border: 1px solid black;
+  border-radius: 4rem;
+  text-decoration: none;
+  color:black;
+}
+
+.atribut__text__signup {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.errors__signup {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.inputs__signup {
+  border-radius: 2rem;
+  width: 20rem;
+  height: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem; 
+}
+
+.sumbit__signup {
+  position:absolute;
+  top: 29rem;
+  right: 18rem;
+  font-weight: 900;
+  color:black;
+  text-decoration: none;
+}
+
+.sumbit__login {
+  top: 20rem;
+  position:absolute;
+  right: 18rem;
+  font-weight: 900;
+  color:black;
+  text-decoration: none;
+}
