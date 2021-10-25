@@ -1,16 +1,13 @@
-import React from 'react';
-import './MainPage.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export function MainPage () {
+
+export const MainPage = () => {
     return (
-        <nav>
-            <ul>
-                <li><Link to='/login'>Вход</Link></li>
-            </ul>
-            <ul>
-                <li><Link to='/signup'>Регистрация</Link></li>
-            </ul>
-        </nav>
-    );
+        <div>
+            <h1 className="HomeText">Добро пожаловать в Chainbook!</h1>
+            <Link className="button__signup" to="/signup">РЕГИСТРАЦИЯ</Link>
+            <Link className="button__signup" to="/login">АВТОРИЗАЦИЯ</Link>
+        </div>
+    )
 }
