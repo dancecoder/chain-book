@@ -2,16 +2,17 @@ import React, {useState, useEffect} from "react";
 import { Formik, useFormik } from "formik";
 import { Link } from "react-router-dom";
 import {axios} from "axios";
+import "./LoginPage.css";
 
 const validate = values => {
     const errors = {};
 
     if (!values.nickname) {
-        errors.nickname = "Введите никнейм";
+        errors.nickname = "Введите имя для входа";
     } 
 
     if (!values.password) {
-        errors.password = "Введите Ваш пароль!";
+        errors.password = "Введите Ваш пароль";
     }
 
     return errors;
@@ -33,11 +34,11 @@ export function LoginPage () {
         name: "",
     })
 
-    LogIn.handleChange = event => {
+    LoginPage.handleChange = event => {
         this.setState({ name: event.target.value });
       }
     
-      LogIn.handleSubmit = event => {
+      LoginPage.handleSubmit = event => {
         event.preventDefault();
     
         const user = {
@@ -53,10 +54,10 @@ export function LoginPage () {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Link className="home__Icon" to="/">НАЧАЛО</Link>
+            <Link className="home__Icon" to="/">Начало</Link>
             <p></p>
 
-            <label htmlFor="nickname" className="atribut__text__signup">ИМЯ ПОЛЬЗОВАТЕЛЯ</label>
+            <label htmlFor="nickname" className="atribut__text__signup">Имя пользователя</label>
             <p> </p>
             <input
                 id="nickname"
@@ -68,7 +69,7 @@ export function LoginPage () {
             /> {formik.errors.nickname ? <div className="errors__signup">{formik.errors.nickname}</div> : null} 
             <p></p>
 
-            <label htmlFor="password" className="atribut__text__signup">ПАРОЛЬ</label>
+            <label htmlFor="password" className="atribut__text__signup">Пароль</label>
             <p></p>
             <input
                 id="password"
@@ -80,7 +81,7 @@ export function LoginPage () {
             /> {formik.errors.password ? <div className="errors__signup">{formik.errors.password}</div> : null} 
             <p> </p>
 
-            <Link className="sumbit__login" to="/{username}">АВТОРИЗАЦИЯ</Link>
+            <Link className="sumbit__login" to="/{username}">Вход</Link>
         </form>
     )
 
