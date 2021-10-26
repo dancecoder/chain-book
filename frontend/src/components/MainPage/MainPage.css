@@ -1,0 +1,43 @@
+.AppWork {
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  width: 1366px;
+  height: 768px;
+  background-color:rgb(152, 142, 214);
+}
+
+.AppFrame {
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  display: block;
+  width: 850px;
+  height: auto;
+  margin: 8rem auto;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
+
+.HomeText {
+  margin: 4rem auto 6rem;
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+.button__signup {
+  margin: 0 4rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color:tomato;
+  border: 1px solid black;
+  border-radius: 4rem;
+  text-decoration: none;
+  color:black;
+}
+
+
+
