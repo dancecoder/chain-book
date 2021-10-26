@@ -1,16 +1,20 @@
-import React from 'react';
-import './MainPage.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./MainPage.css";
+import { Link } from "react-router-dom";
+import { renderRoutes } from "react-router-config";
 
-export function MainPage () {
+export function MainPage({route}) {
+    MainPage.defaultProps = {
+        route: null
+    };
     return (
-        <nav>
-            <ul>
-                <li><Link to='/login'>Вход</Link></li>
-            </ul>
-            <ul>
-                <li><Link to='/signup'>Регистрация</Link></li>
-            </ul>
-        </nav>
-    );
+        <div className="AppWork">
+            <div id="appframe" className="AppFrame">
+                <div>{renderRoutes(route.routes)}</div>
+                <h1 className="HomeText">Добро пожаловать в Chainbook!</h1>
+                <Link className="button__signup" to="/signup">Регистрация</Link>
+                <Link className="button__signup" to="/login">Вход</Link>
+            </div>
+        </div>
+    )
 }

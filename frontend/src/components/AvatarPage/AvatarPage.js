@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./AvatarPage.css";
 
-export function AvatarPage(props) {
-    const avatarName = props.match.params.avatarName;
+export const AvatarPage = () => {
     return (
         <div>
-            <Link to='/'>На главную страницу</Link>
-            <h2>Страница Аватара</h2>
-            <span>{avatarName}</span>
+            <Link className="home__Icon" to="/">Начало</Link>
+            <h3>Имя Фамилия</h3>
+            <img/>
+            <h4>Данные о пользователе</h4>
         </div>
-    );
+    )
 }
