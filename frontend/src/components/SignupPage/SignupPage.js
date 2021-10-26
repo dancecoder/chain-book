@@ -1,30 +1,31 @@
 import React from "react";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import { Link } from "react-router-dom";
+import "./SignupPage.css";
 
-const validate = values => {
+function validate(values) {
     const errors = {};
     
     if (!values.fullname) {
         errors.fullname = "Как Вас зовут?";
-    } else if (!values.fullname.includes(" ")) {
-        errors.fullname = "Формат ввода имеет вид: Имя Фамилия"
+    } else if (!values.fullname.length > 20) {
+        errors.fullname = "Имя входа не должно превосходить 20 символов";
     }
 
     if (!values.nickname) {
-        errors.nickname = "Введите никнейм";
+        errors.nickname = "Введите логин для входа";
     } 
 
     if (!values.password) {
-        errors.password = "Придумайте хороший пароль!";
-    } else if (values.password.length < 6 || values.password.length > 15) {
-        errors.password = "Пароль должен иметь длину от 6 до 15 символов!";
+        errors.password = "Придумайте хороший пароль";
+    } else if (values.password.length < 6) {
+        errors.password = "Пароль должен иметь от 6 символов";
     }
 
     if (!values.repeatPassword) {
-        errors.repeatPassword = "Повторите пароль!";
+        errors.repeatPassword = "Повторите пароль";
     } else if (values.repeatPassword != values.password) {
-        errors.repeatPassword = "Пароли должны совпадать!";
+        errors.repeatPassword = "Пароли должны совпадать";
     }
 
     return errors;
@@ -46,9 +47,9 @@ export function SignupPage () {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Link className="home__Icon" to="/">НАЧАЛО</Link>
+            <Link className="home__Icon" to="/">Начало</Link>
             <p></p>
-            <label htmlFor="fullname" className="atribut__text__signup">ИМЯ И ФАМИЛИЯ</label>
+            <label htmlFor="fullname" className="atribut__text__signup">Имя и фамилия</label>
             <p> </p> 
             <input
                 id="fullname"
@@ -60,7 +61,7 @@ export function SignupPage () {
             /> {formik.errors.fullname ? <div className="errors__signup">{formik.errors.fullname}</div> : null} 
             <p> </p>
 
-            <label htmlFor="nickname" className="atribut__text__signup">ИМЯ ПОЛЬЗОВАТЕЛЯ</label>
+            <label htmlFor="nickname" className="atribut__text__signup">Имя пользователя</label>
             <p> </p>
             <input
                 id="nickname"
@@ -72,7 +73,7 @@ export function SignupPage () {
             /> {formik.errors.nickname ? <div className="errors__signup">{formik.errors.nickname}</div> : null} 
             <p></p>
 
-            <label htmlFor="password" className="atribut__text__signup">ПАРОЛЬ</label>
+            <label htmlFor="password" className="atribut__text__signup">Пароль</label>
             <p></p>
             <input
                 id="password"
@@ -84,7 +85,7 @@ export function SignupPage () {
             /> {formik.errors.password ? <div className="errors__signup">{formik.errors.password}</div> : null} 
             <p> </p>
 
-            <label htmlFor="repeatPassword" className="atribut__text__signup">ПОВТОР ПАРОЛЯ</label>
+            <label htmlFor="repeatPassword" className="atribut__text__signup">Повтор пароля</label>
             <p> </p>
             <input
                 id="repeatPassword"
@@ -95,7 +96,7 @@ export function SignupPage () {
                 value={formik.values.repeatPassword}
             /> {formik.errors.repeatPassword ? <div className="errors__signup">{formik.errors.repeatPassword}</div> : null} 
             <p> </p>
-            <Link className="sumbit__signup">РЕГИСТРАЦИЯ</Link>
+            <Link className="sumbit__signup">Регистрация</Link>
         </form>
     )
 
