@@ -1,20 +1,29 @@
 {
-  "name": "backend",
+  "name": "chainbook-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@babel/helper-module-imports": "^7.15.4",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-handlebars": "^5.3.4",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
-    "pug": "^3.0.2"
+    "mysql": "^2.18.1",
+    "pug": "^3.0.2",
+    "sequelize": "^6.7.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
     "nodemon": "^2.0.13"
   }
 }
