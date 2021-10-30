@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   throw new Error('Not Implemented Yet');
 });
 
+router.get('/:userId', function(req, res, next) {
+  throw new Error('Not Implemented Yet');
+});
+
+
 module.exports = router;
