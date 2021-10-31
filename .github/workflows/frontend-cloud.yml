@@ -10,10 +10,6 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    defaults:
-      run:
-        working-directory: ./frontend
-    
     steps:
     
     - uses: actions/checkout@v2
@@ -26,9 +22,8 @@ jobs:
     
     - name: build react app
       run: |
-        pwd
         npm ci
-        npm run build
+        npm run build -workspace frontend
         
     - uses: jakejarvis/s3-sync-action@master
       with:
